@@ -1,0 +1,24 @@
+##Spring Configuration
+server:
+  port: 8080
+spring:
+  application:
+    name: crudCleanArchitectureReactive
+  devtools:
+    add-properties: false
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  profiles:
+  r2dbc:
+    url: r2dbc:mysql://localhost:3306/clean_architecture
+    username: root
+    password:
+    initialization-mode: always
+
+  #r2dbc:
+  #  url: r2dbc:h2:mem:///contentitem?options=DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+  #  name: sa
+  #  password:
+

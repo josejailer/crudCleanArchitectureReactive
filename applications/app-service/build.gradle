@@ -1,0 +1,17 @@
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+	implementation project( ':reactive-web')
+	implementation project( ':publicacion')
+    implementation project(':model')
+    implementation project(':usecase')
+    implementation 'org.springframework.boot:spring-boot-starter'
+    runtimeOnly('org.springframework.boot:spring-boot-devtools')
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.28'
+    implementation group: 'dev.miku', name: 'r2dbc-mysql', version: '0.8.0.RC2'
+}
+
+task explodedJar(type: Copy) {
+    with jar
+    into "${buildDir}/exploded"
+}
